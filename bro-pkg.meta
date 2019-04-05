@@ -1,0 +1,9 @@
+[package]
+description = Attribution of network connections by linking them to applications and users on osquery hosts.
+tags = osquery, conn, attribution
+version = 0.1.0
+depends =
+  zeek-osquery-framework ~0.1.0
+  zeek-osquery-state ~0.1.0
+  zeek-osquery-host-conn ~0.1.0
+script_dir = scripts
