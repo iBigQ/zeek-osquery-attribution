@@ -11,6 +11,7 @@ export {
 		isOrig: bool &log;
                 host: string &log;
 		pid: int &log &optional;
+		name: string &log &optional;
 		path: string &log &optional;
 		cmdline: string &log &optional;
 		parent: int &log &optional;
@@ -31,6 +32,8 @@ event osquery::connection_attributed(c: connection, src_attributions: vector of 
 
 		if (attribution?$process_info) {
 			info$pid = attribution$process_info$pid;
+			if (attribution$process_info?$name) { 
+				info$name = attribution$process_info$name; }
 			if (attribution$process_info?$path) { 
 				info$path = attribution$process_info$path; }
 			if (attribution$process_info?$cmdline) { 
@@ -56,6 +59,8 @@ event osquery::connection_attributed(c: connection, src_attributions: vector of 
 
 		if (attribution?$process_info) {
 			info$pid = attribution$process_info$pid;
+			if (attribution$process_info?$name) { 
+				info$name = attribution$process_info$name; }
 			if (attribution$process_info?$path) { 
 				info$path = attribution$process_info$path; }
 			if (attribution$process_info?$cmdline) { 
