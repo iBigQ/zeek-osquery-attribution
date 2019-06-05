@@ -1,8 +1,5 @@
 #! Attribution of network connections to hosts, processes and users
 
-@load zeek-osquery-state
-@load zeek-osquery-host-conn
-
 module osquery;
 
 export {
